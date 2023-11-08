@@ -10,7 +10,7 @@ function onEvent(element, event, callback, ...options) {
     element.addEventListener(event, callback, ...options);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+onEvent(document, 'DOMContentLoaded', () => {
     const magic8Ball = {};
     magic8Ball.listOfAnswers = [
         'No', 'Yes', 'Outlook good',
@@ -26,12 +26,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     answer.style.display = 'none';
 
+    const hasLetters = (str) => {
+        return /[a-zA-Z]/.test(str);
+    };
+
     magic8Ball.askQuestion = function (question) {
-        if (question.trim() === '') {
+        if (question.trim() === '' || !hasLetters(question)) {
             errorText.textContent = 'Please enter a valid question.';
+            errorText.style.visibility = 'visible';
             return;
         } else {
-            errorText.style.visibility ='hidden';
+            errorText.style.visibility = 'hidden';
         }
 
         answer.style.display = 'flex';
@@ -44,9 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const answerText = this.listOfAnswers[randomIndex];
 
         answer.textContent = answerText;
-
-        console.log(question);
-        console.log(answerText);
     };
 
     const onClick = () => {
@@ -54,8 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         magic8Ball.askQuestion(question);
     };
 
-    // Trigger the 'Ask' button when the Enter key is pressed in the input field
-onEvent(questionInput, 'keyup', (event) => {
+    onEvent(questionInput, 'keyup', (event) => {
         if (event.key === 'Enter') {
             onClick();
         }
