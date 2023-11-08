@@ -120,6 +120,10 @@ section+section {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    width: 100px;
+    height: 100px;
+    line-height: 0.8;
+    margin-bottom: 30px;
 }
 
 #questionButton {
@@ -144,6 +148,10 @@ section+section {
 .answer-container {
     display: flex;
     flex-direction: column;
+    width: 315px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
 .answer-container input {
