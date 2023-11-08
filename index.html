@@ -14,7 +14,9 @@
         type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Poppins:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Poppins:wght@100;300;400;500&display=swap"
+        rel="stylesheet">
     <link
         href="https://db.onlinewebfonts.com/c/2ec3ff0d589a5e3203c12ad898857451?family=GT+Haptik+Regular"
         rel="stylesheet" type="text/css" />
@@ -25,7 +27,6 @@
     <script src="./assets/script/index.js" defer></script>
     <title>MAGIC 8 BALL</title>
 </head>
-
 <body>
     <div class="container">
         <main>
@@ -34,17 +35,21 @@
                     <h1 class="gradient-text">MAGIC <span>8</span> BALL</h1>
                 </header>
                 <div class="ball">
-                        <p id="answer" class="answer"></p>
+                    <div class="answer-container">
+                        <div id="answer" class="answer"></div>
+                    </div>
                 </div>
                 <div class="question-input">
-                    <input type="text" id="questionInput" placeholder="Enter a yes or no question">
-                    <input type="button" id="askButton" class="primary-button" value="Ask"/>
+                    <div class="answer-container">
+                        <input type="text" id="question-input"
+                        placeholder="Enter a yes or no question">
+                    <p id="error" style="color: red;"></p>
+                    </div>
+                    <input type="button" id="ask-button" class="primary-button"
+                        value="Ask" />
                 </div>
-
             </div>
         </main>
     </div>
 </body>
-
-
 </html>

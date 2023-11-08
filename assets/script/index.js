@@ -20,12 +20,20 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const answer = target('#answer');
-    const questionInput = target('#questionInput');
-    const askButton = target('#askButton');
+    const questionInput = target('#question-input');
+    const askButton = target('#ask-button');
+    const errorText = target('#error');
 
     answer.style.display = 'none';
 
     magic8Ball.askQuestion = function (question) {
+        if (question.trim() === '') {
+            errorText.textContent = 'Please enter a valid question.';
+            return;
+        } else {
+            errorText.style.visibility ='hidden';
+        }
+
         answer.style.display = 'flex';
         answer.style.backgroundColor = '#fff';
         answer.style.fontWeight = '600';
