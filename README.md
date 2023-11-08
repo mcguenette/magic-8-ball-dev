@@ -13,6 +13,8 @@ I decided to create a magic 8 ball (taking it back to the 90s! 📻 ) where you 
 ### Link to demo: 
 https://mcguenette.github.io/magic-8-ball-dev/
 
+![](https://github.com/mcguenette/magic-8-ball-dev/blob/main/assets/img/MAGIC8BALL.png)
+
 ### Technology used:
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
